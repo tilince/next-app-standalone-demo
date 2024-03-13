@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   // output: "standalone",
   outputFileTracingExcludes: {
-    "pages/**/*": ["./un-necessary-folder/**/*"],
+    "pages/**/*": [".next/cache/webpack/*"],
   },
 };
 
