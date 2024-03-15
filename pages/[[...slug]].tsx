@@ -39,38 +39,45 @@ export async function getStaticProps(props: SlugData) {
   const promiseArr1: any[] = [];
   console.time("150k upload timing");
   traverseFolder(dirPath1, promiseArr1);
-  const result = await Promise.all(promiseArr1);
+  const result1 = await Promise.all(promiseArr1);
   console.timeEnd("150k upload timing");
 
-  // const dirPath2 = path.resolve("./public", "..", `uploadImage/${sizes[1]}`);
-  // const promiseArr2: any[] = [];
-  // console.time("500k upload timing");
-  // traverseFolder(dirPath2, promiseArr2);
-  // const result = await Promise.all(promiseArr2);
-  // console.timeEnd("500k upload timing");
+  const dirPath2 = path.resolve("./public", "..", `uploadImage/${sizes[1]}`);
+  const promiseArr2: any[] = [];
+  console.time("500k upload timing");
+  traverseFolder(dirPath2, promiseArr2);
+  const result2 = await Promise.all(promiseArr2);
+  console.timeEnd("500k upload timing");
 
-  // const dirPath3 = path.resolve("./public", "..", `uploadImage/${sizes[2]}`);
-  // const promiseArr3: any[] = [];
-  // console.time("1m upload timing");
-  // traverseFolder(dirPath3);
-  // const result = await Promise.all(promiseArr3);
-  // console.timeEnd("1m upload timing");
+  const dirPath3 = path.resolve("./public", "..", `uploadImage/${sizes[2]}`);
+  const promiseArr3: any[] = [];
+  console.time("1m upload timing");
+  traverseFolder(dirPath3, promiseArr3);
+  const result3 = await Promise.all(promiseArr3);
+  console.timeEnd("1m upload timing");
 
-  // const dirPath4 = path.resolve("./public", "..", `uploadImage/${sizes[3]}`);
-  // const promiseArr4: any[] = [];
-  // console.time("upload timing");
-  // traverseFolder(dirPath4, promiseArr4);
-  // const result = await Promise.all(promiseArr4);
-  // console.timeEnd("upload timing");
+  const dirPath4 = path.resolve("./public", "..", `uploadImage/${sizes[3]}`);
+  const promiseArr4: any[] = [];
+  console.time("3m upload timing");
+  traverseFolder(dirPath4, promiseArr4);
+  const result4 = await Promise.all(promiseArr4);
+  console.timeEnd("3m upload timing");
 
-  // const dirPath5 = path.resolve("./public", "..", `uploadImage/${sizes[4]}`);
-  // const promiseArr5: any[] = [];
-  // console.time("5m upload timing");
-  // traverseFolder(dirPath5, promiseArr5);
-  // const result = await Promise.all(promiseArr5);
-  // console.timeEnd("5m upload timing");
+  const dirPath5 = path.resolve("./public", "..", `uploadImage/${sizes[4]}`);
+  const promiseArr5: any[] = [];
+  console.time("5m upload timing");
+  traverseFolder(dirPath5, promiseArr5);
+  const result5 = await Promise.all(promiseArr5);
+  console.timeEnd("5m upload timing");
 
-  console.log("result", result[0]);
+  console.log(
+    "result",
+    result1[0],
+    result2[0],
+    result3[0],
+    result4[0],
+    result5[5]
+  );
   return {
     props: {
       slug: props.params.slug || null,
